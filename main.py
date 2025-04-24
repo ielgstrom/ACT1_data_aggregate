@@ -34,5 +34,6 @@ final_df = (pd.merge(final_df, df_political_regime, on=['country', 'year'], how=
 not_data_countries = final_df[(final_df['happiness_score'].isna())]['country'].unique()
 
 final_df = final_df[final_df['happiness_score'].notna()]
+final_df.to_csv('final_data.csv')
 
 print(final_df)
