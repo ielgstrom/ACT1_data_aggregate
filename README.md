@@ -7,3 +7,4 @@ Les fonts son les següents:
 * https://www.kaggle.com/datasets/hashimkhanwazir/global-population-and-migration-dataset
 * https://www.kaggle.com/datasets/sazidthe1/global-happiness-scores-and-factors
 * https://ourworldindata.org/grapher/political-regime?time=latest
+* https://ourworldindata.org/women-rights
