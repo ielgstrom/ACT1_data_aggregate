@@ -11,7 +11,7 @@ df_happiness_2021 = pd.read_csv('dataset/WHR_2021.csv')
 df_happiness_2022 = pd.read_csv('dataset/WHR_2022.csv')
 df_happiness_2023 = pd.read_csv('dataset/WHR_2023.csv')
 df_political_regime = pd.read_csv('dataset/political-regime.csv')
-
+df_women = pd.read_csv("dataset/share-of-women-in-parliament.csv")
 # Suppose this is your mapping:
 idx_to_regime = {0: 'closed autocracies', 1: 'electoral autocracies',
                  2: 'electoral democracies', 3: 'liberal democracies'}
@@ -20,6 +20,7 @@ idx_to_regime = {0: 'closed autocracies', 1: 'electoral autocracies',
 df_political_regime['Political regime'] = df_political_regime['Political regime'].map(idx_to_regime)
 df_political_regime['Political regime'] = df_political_regime['Political regime'].astype('category')
 df_political_regime = df_political_regime.rename(columns={'Entity': 'country', 'Year': 'year'})
+df_women = df_women.rename(columns={'Entity': 'country', 'Year': 'year'})
 
 final_df = pd.DataFrame()
 for year in range(2015, 2024):
@@ -30,10 +31,9 @@ for year in range(2015, 2024):
     final_df = pd.concat([final_df, df], ignore_index=True)
 
 final_df = (pd.merge(final_df, df_political_regime, on=['country', 'year'], how='left'))
+final_df = (pd.merge(final_df, df_women, on=['country', 'year'], how='left'))
 
 not_data_countries = final_df[(final_df['happiness_score'].isna())]['country'].unique()
 
 final_df = final_df[final_df['happiness_score'].notna()]
 final_df.to_csv('final_data.csv')
-
-print(final_df)
