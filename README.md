@@ -14,3 +14,6 @@ Aquest repositori està compres per
 2. fitxer main.py per processar totes les dades
 3. fitxer .gitignore per no incloure contingut innecessari en el repositori
 4. fitxer final_data.csv resultant del processament de dades de main.py
+
+## A partir d'aquestes dades es fa la següent visualització feta amb Flourish:
+https://public.flourish.studio/story/3160106/
