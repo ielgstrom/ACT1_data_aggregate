@@ -14,6 +14,8 @@ Aquest repositori està compres per
 2. fitxer main.py per processar totes les dades
 3. fitxer .gitignore per no incloure contingut innecessari en el repositori
 4. fitxer final_data.csv resultant del processament de dades de main.py
+5. fitxer visualization.py on es processen les dades per ser preparades per ser visualitzades
+6. fitxer vis_1.csv i vis_2.csv on es contenen les dades adaptades per ser visualitzades per Flourish
 
 ## A partir d'aquestes dades es fa la següent visualització feta amb Flourish:
 https://public.flourish.studio/story/3160106/
